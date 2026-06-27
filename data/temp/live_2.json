@@ -1,0 +1,149 @@
+{
+  "sectionTitle": "Highlights",
+  "sectionSubtitle": "A quick look inside Funenza.",
+  "items": [
+    {
+      "id": "m25",
+      "title": "M25",
+      "subtitle": "",
+      "image": "m25.webp",
+      "alt": "M25",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "m7",
+      "title": "M7",
+      "subtitle": "",
+      "image": "m7.webp",
+      "alt": "M7",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "8",
+      "title": "8",
+      "subtitle": "",
+      "image": "8.webp",
+      "alt": "8",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "15",
+      "title": "15",
+      "subtitle": "",
+      "image": "15.webp",
+      "alt": "15",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "1",
+      "title": "1",
+      "subtitle": "",
+      "image": "1.webp",
+      "alt": "1",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "13",
+      "title": "13",
+      "subtitle": "",
+      "image": "13.webp",
+      "alt": "13",
+      "featured": false,
+      "width": 633,
+      "height": 460,
+      "orientation": "landscape"
+    },
+    {
+      "id": "2",
+      "title": "2",
+      "subtitle": "",
+      "image": "2.webp",
+      "alt": "2",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "4",
+      "title": "4",
+      "subtitle": "",
+      "image": "4.webp",
+      "alt": "4",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "m6",
+      "title": "M6",
+      "subtitle": "",
+      "image": "m6.webp",
+      "alt": "M6",
+      "featured": false,
+      "width": 310,
+      "height": 933,
+      "orientation": "portrait"
+    },
+    {
+      "id": "22",
+      "title": "22",
+      "subtitle": "",
+      "image": "22.webp",
+      "alt": "22",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "23",
+      "title": "23",
+      "subtitle": "",
+      "image": "23.webp",
+      "alt": "23",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "landscape"
+    },
+    {
+      "id": "18",
+      "title": "18",
+      "subtitle": "",
+      "image": "18.webp",
+      "alt": "18",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "landscape"
+    },
+    {
+      "id": "11",
+      "title": "11",
+      "subtitle": "",
+      "image": "11.webp",
+      "alt": "11",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    }
+  ]
+}

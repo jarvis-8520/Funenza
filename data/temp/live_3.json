@@ -1,0 +1,149 @@
+{
+  "sectionTitle": "FUNENZA HIGHLIGHTS",
+  "sectionSubtitle": "Smiles, thrills, and memories. See what's waiting for you at Funenza.",
+  "items": [
+    {
+      "id": "m5",
+      "title": "M5",
+      "subtitle": "",
+      "image": "m5.webp",
+      "alt": "M5",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "m6",
+      "title": "M6",
+      "subtitle": "",
+      "image": "m6.webp",
+      "alt": "M6",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "17",
+      "title": "17",
+      "subtitle": "",
+      "image": "17.webp",
+      "alt": "17",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "22",
+      "title": "22",
+      "subtitle": "",
+      "image": "22.webp",
+      "alt": "22",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "16",
+      "title": "16",
+      "subtitle": "",
+      "image": "16.webp",
+      "alt": "16",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "15",
+      "title": "15",
+      "subtitle": "",
+      "image": "15.webp",
+      "alt": "15",
+      "featured": false,
+      "width": 633,
+      "height": 1170,
+      "orientation": "landscape"
+    },
+    {
+      "id": "2",
+      "title": "2",
+      "subtitle": "",
+      "image": "2.webp",
+      "alt": "2",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "13",
+      "title": "13",
+      "subtitle": "",
+      "image": "13.webp",
+      "alt": "13",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "8",
+      "title": "8",
+      "subtitle": "",
+      "image": "8.webp",
+      "alt": "8",
+      "featured": false,
+      "width": 310,
+      "height": 223,
+      "orientation": "landscape"
+    },
+    {
+      "id": "m7",
+      "title": "M7",
+      "subtitle": "",
+      "image": "m7.webp",
+      "alt": "M7",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "m24",
+      "title": "M24",
+      "subtitle": "",
+      "image": "m24.webp",
+      "alt": "M24",
+      "featured": false,
+      "width": 310,
+      "height": 697,
+      "orientation": "portrait"
+    },
+    {
+      "id": "m9",
+      "title": "M9",
+      "subtitle": "",
+      "image": "m9.webp",
+      "alt": "M9",
+      "featured": false,
+      "width": 310,
+      "height": 460,
+      "orientation": "portrait"
+    },
+    {
+      "id": "23",
+      "title": "23",
+      "subtitle": "",
+      "image": "23.webp",
+      "alt": "23",
+      "featured": false,
+      "width": 310,
+      "height": 933,
+      "orientation": "landscape"
+    }
+  ]
+}

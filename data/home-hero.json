@@ -1,0 +1,72 @@
+[
+  {
+    "type": "image",
+    "src": {
+      "desktop": "15.webp",
+      "mobile": "10.webp"
+    },
+    "alt": "Funenza grand entrance reception desk and branding area",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "1.webp",
+      "mobile": "m9.webp"
+    },
+    "alt": "High-energy kids play zone and giant adventure slide",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "12.webp",
+      "mobile": "m25.webp"
+    },
+    "alt": "Premium neon bowling lanes and family bumper cars attraction",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "4.webp",
+      "mobile": "m6.webp"
+    },
+    "alt": "Dynamic dynamic angled bike simulator and premium simulation seating area",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "10.webp",
+      "mobile": "m7.webp"
+    },
+    "alt": "Immersive VR Paraglider simulator and dual arcade gaming cabinets",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "3.webp",
+      "mobile": "m9.webp"
+    },
+    "alt": "Vibrant indoor active family play pit and trampoline zone",
+    "autoplay": true,
+    "delay": 5000
+  },
+  {
+    "type": "image",
+    "src": {
+      "desktop": "19.webp",
+      "mobile": "m7.webp"
+    },
+    "alt": "Game Brew Cafe dining lounge and arcade hardware setup",
+    "autoplay": true,
+    "delay": 5000
+  }
+]
