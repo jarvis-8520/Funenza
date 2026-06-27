@@ -1,0 +1,317 @@
+/* =========================================================
+   HOME WHY
+   "Why Funenza" section for home.html
+
+   Includes:
+   - Section wrapper
+   - Top header row
+   - Left heading block
+   - Right logo block
+   - Why cards grid
+   - Individual text cards
+   - Responsive rules
+   ========================================================= */
+
+
+/* =========================================================
+   1. SECTION WRAPPER
+   Outer spacing, background, and clipping
+   ========================================================= */
+
+.home-why {
+  position: relative;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.home-why .container {
+  width: min(100% - 2rem, 1320px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   2. HEADER ROW
+   Left = heading text
+   Right = logo
+   ========================================================= */
+
+.home-why .section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+
+/* =========================================================
+   3. LEFT HEADING BLOCK
+   Centered text block placed on the left side
+   ========================================================= */
+
+.why-header-text {
+  max-width: 640px;
+  margin-left: 5rem;
+  text-align: center;
+}
+
+
+/* =========================================================
+   4. HEADING TYPOGRAPHY
+   Shared heading look for kicker and title
+   ========================================================= */
+
+.section-kicker,
+.home-why .section-title {
+  margin: 0;
+  font-family: "Luckiest Guy", cursive;
+  /* Make the text slightly punchier and scale smoother */
+  font-size: clamp(2.5rem, 5vw, 4rem); 
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-base);
+}
+
+/* Top line */
+.section-kicker {
+  font-size: clamp(4rem, 3.2vw, 3.2rem);
+  line-height: 0.9;
+}
+
+/* Main line */
+.home-why .section-title {
+  font-size: clamp(5rem, 4vw, 4.2rem);
+  line-height: 0.95;
+}
+
+
+/* =========================================================
+   5. HEADING COLOR STYLES
+   Reusable word color treatments
+   ========================================================= */
+
+/* Red fill, yellow stroke, blue shadow */
+.section-kicker .text-style-red,
+.home-why .section-title .text-style-red {
+  color: #ff2d2d;
+  -webkit-text-stroke: 2px #ffd93d;
+  text-shadow:
+    0 3px 0 #1f49ff,
+    4px 6px 0 rgba(0, 0, 0, 0.18),
+    0 10px 22px rgba(0, 0, 0, 0.36);
+}
+
+/* Yellow fill, red stroke, blue shadow */
+.section-kicker .text-style-yellow,
+.home-why .section-title .text-style-yellow {
+  color: #ffd93d;
+  -webkit-text-stroke: 2px #ff2d2d;
+  text-shadow:
+    0 3px 0 #1f49ff,
+    4px 6px 0 rgba(0, 0, 0, 0.18),
+    0 10px 22px rgba(0, 0, 0, 0.36);
+}
+
+/* Blue fill, yellow stroke, red shadow */
+.section-kicker .text-style-blue,
+.home-why .section-title .text-style-blue {
+  color: #1f49ff;
+  -webkit-text-stroke: 2px #ffd93d;
+  text-shadow:
+    0 3px 0 #ff2d2d,
+    4px 6px 0 rgba(0, 0, 0, 0.18),
+    0 10px 22px rgba(0, 0, 0, 0.36);
+}
+
+
+/* =========================================================
+   6. RIGHT LOGO BLOCK
+   Funenza logo aligned on the right side
+   ========================================================= */
+
+.why-header-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.why-header-logo img {
+  display: block;
+  /* Replace the hard 280px with a fluid clamp so it grows WITH the text */
+  width: 60%;
+  align-items: center; 
+  height: auto;
+  object-fit: contain;
+}
+/* =========================================================
+   7. WHY GRID
+   8 text feature cards
+   Desktop = 4 columns
+   ========================================================= */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   8. WHY CARD
+   Feature card shell
+   ========================================================= */
+
+.why-card {
+  position: relative;
+  min-height: 122px;
+  padding: 1.2rem 1rem 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(8, 12, 30, 0.96) 0%, rgba(3, 6, 18, 0.98) 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 59, 48, 0.08),
+    0 0 18px rgba(31, 73, 255, 0.14),
+    0 12px 26px rgba(0, 0, 0, 0.24);
+}
+
+/* Soft yellow border fade */
+.why-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 234, 0, 1) 0%,
+    rgba(255, 234, 0, 0) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   9. CARD TEXT
+   Title and supporting copy
+   ========================================================= */
+
+.why-card-title {
+  margin: 0 0.5rem 0.7rem;
+  color: #ffffff;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 1.5rem;
+  line-height: 1.45;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.why-card-text {
+  margin: 0 0.5rem;
+  max-width: 26ch;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: "Outfit", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   10. TABLET
+   Reduce feature cards to 2 columns
+   ========================================================= */
+
+@media (max-width: 1199.98px) {
+  .home-why {
+    padding: 4.5rem 0;
+  }
+
+  .home-why .section-header {
+    gap: 1.5rem;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .why-header-logo img {
+    width: 80%
+  }
+}
+
+
+/* =========================================================
+   11. MOBILE
+   Stack header and cards vertically
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+  .home-why {
+    padding: 2rem 0 0;
+  }
+
+  .home-why .container {
+    width: min(100% - 1.25rem, 640px);
+  } 
+
+  .home-why .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .why-header-text {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .section-kicker {
+    font-size: 2.5rem;
+    padding-bottom:1rem ;
+    
+  }
+
+  .home-why .section-title {
+    font-size: 2.5rem;
+    
+    -webkit-text-stroke: 1.5px #ffd93d;
+    text-shadow:
+      0 2px 0 #1f49ff,
+      0 8px 18px rgba(0, 0, 0, 0.38);
+  }
+
+  .why-header-logo img {
+    width: 80%;
+    align-items: center;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 1rem 0.95rem;
+    border-radius: 0.95rem;
+  }
+
+  .why-card-title {
+    font-size: 0.76rem;
+  }
+
+  .why-card-text {
+    max-width: none;
+    font-size: 0.9rem;
+  }
+}

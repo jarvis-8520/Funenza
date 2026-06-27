@@ -1,0 +1,18 @@
+/* =========================================================
+   fun.CSS
+   Page-level import file for fun.html
+
+   Purpose:
+   - Keep fun styles modular
+   - Load section files in page order
+   - Shared global styles stay in main.css
+
+   Order:
+   1. Hero
+   2. Funenza Highlights
+   3. reviews
+   ========================================================= */
+
+@import url("./fun-hero.css");
+@import url("./fun-review.css");
+@import url("./fun-highlights.css");

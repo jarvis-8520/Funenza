@@ -1,0 +1,471 @@
+/* =========================================================
+   NAVBAR CSS
+   Structure:
+   1. Base / Shared
+   2. Desktop Default
+   3. Tablet Overrides
+   4. Mobile Overrides
+
+   Developer note:
+   - Keep shared component styles in Base
+   - Keep desktop as the default visual system
+   - Use tablet/mobile only for overrides
+   - When editing a component, first check Base,
+     then check the specific breakpoint override
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASE / SHARED
+   These styles are reused across all viewport sizes.
+   Update here first if the change should affect every device.
+   ========================================================= */
+
+.navbar-links li:has(a[data-status="draft"]),
+.mobile-nav-links li:has(a[data-status="draft"]) {
+  display: none;
+}
+
+/* Main header wrapper */
+.site-header {
+  position: fixed;
+  top: 2.5rem;
+  left: 50%;
+  z-index: 1000;
+  width: min(95%, 1550px);
+  transform: translateX(-50%);
+  transition:
+    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.24s ease,
+    top 0.24s ease;
+  will-change: transform, opacity;
+}
+
+/* Header visible state */
+.site-header.is-floating {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Header hidden while scrolling down */
+.site-header.is-hidden-on-scroll {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-140%);
+  pointer-events: none;
+}
+
+/* Stronger glass effect after page scroll */
+.site-header.is-scrolled .navbar-shell {
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Main navbar container */
+.navbar-shell {
+  position: relative;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 0.35rem 1rem 0.35rem 8rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  overflow: visible;
+}
+/* Gradient outline border */
+.navbar-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: 22px;
+  background: linear-gradient(
+    90deg,
+    #ff3b3b 0%,
+    #ff8c00 20%,
+    #ffd700 38%,
+    #3b8bff 58%,
+    #ff3b3b 75%,
+    #ffd700 88%,
+    #3b8bff 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Shared logo link behavior */
+.navbar-logo-link,
+.mobile-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Desktop logo positioning */
+.navbar-logo-link {
+  position: absolute;
+  top: 55%;
+  left: 3.5rem;
+  z-index: 5;
+  transform: translateY(-58%);
+}
+
+/* Shared logo image */
+.navbar-logo,
+.mobile-logo {
+  height: auto;
+  display: block;
+}
+
+/* Desktop logo size */
+.navbar-logo {
+  width: 140px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Mobile logo size */
+.mobile-logo {
+  width: 110px;
+}
+
+/* Logo hover effect */
+.navbar-logo-link:hover .navbar-logo,
+.navbar-logo-link:focus-visible .navbar-logo {
+  transform: scale(1.04);
+}
+
+/* Desktop nav container hidden by default, enabled in desktop section */
+.navbar-desktop {
+  display: none;
+  margin-left: auto;
+}
+
+/* Shared nav list reset */
+.navbar-links,
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop nav list */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Desktop nav links */
+.navbar-links a {
+  position: relative;
+  display: inline-block;
+  padding: 0.3rem 0.35rem;
+  color: #e2e8f0;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+/* Desktop underline animation */
+.navbar-links a::after {
+  display: none;
+}
+
+/* Desktop link hover */
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  color: #00e5ff;
+  transform: scale(1.08);
+}
+
+/* Hamburger button */
+.navbar-toggle {
+  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid rgba(226, 232, 240, 0.55);
+  border-radius: 0.75rem;
+  background: rgba(226, 232, 240, 0.08);
+  box-shadow:
+    0 0 8px rgba(226, 232, 240, 0.18),
+    inset 0 0 8px rgba(226, 232, 240, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Hamburger lines */
+.navbar-toggle span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  box-shadow: 0 0 6px rgba(226, 232, 240, 0.35);
+}
+
+.navbar-toggle span:nth-child(1),
+.navbar-toggle span:nth-child(3) {
+  width: 22px;
+}
+
+.navbar-toggle span:nth-child(2) {
+  width: 16px;
+}
+
+/* Hamburger hover */
+.navbar-toggle:hover,
+.navbar-toggle:focus-visible {
+  background: rgba(0, 229, 255, 0.14);
+  border-color: rgba(0, 229, 255, 0.55);
+  box-shadow:
+    0 0 14px rgba(0, 229, 255, 0.55),
+    inset 0 0 10px rgba(0, 229, 255, 0.22);
+  transform: translateY(-1px);
+}
+
+/* Mobile nav list layout */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Mobile nav links */
+.mobile-nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+/* Mobile backdrop */
+.mobile-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-backdrop:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile drawer menu */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 300px;
+  z-index: 1001;
+  background: linear-gradient(135deg, rgba(20, 20, 30, 0.95) 0%, rgba(40, 40, 60, 0.95) 100%);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  padding: 1rem 0;
+}
+
+.mobile-drawer.is-open {
+  transform: translateX(0);
+}
+
+/* Mobile drawer hidden state */
+.mobile-drawer[hidden] {
+  display: none;
+}
+
+/* Mobile close button */
+.mobile-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: rgba(226, 232, 240, 0.1);
+  color: rgba(226, 232, 240, 0.9);
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease;
+  z-index: 10;
+  line-height: 1;
+}
+
+.mobile-close:hover,
+.mobile-close:focus-visible {
+  background: rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+}
+
+/* =========================================================
+   2. DESKTOP DEFAULT
+   Desktop-first visual behavior starts here.
+   Large screens get full navigation and hide drawer controls.
+   ========================================================= */
+
+@media (min-width: 992px) {
+  .navbar-desktop {
+    display: block;
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  .navbar-logo {
+    width: 140px;
+  }
+
+  .navbar-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   3. TABLET
+   Use this zone for medium-width adjustments only.
+   Keep tablet close to desktop unless layout starts breaking.
+   Recommended range: 768px to 991.98px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .site-header {
+    top: 1.5rem;
+    width: min(94%, 900px);
+  }
+
+  .navbar-shell {
+    min-height: 52px;
+    padding: 0.4rem 1rem 0.4rem 9rem;
+  }
+
+  .navbar-logo-link {
+    left: 2rem;
+  }
+
+  .navbar-logo {
+    width: 120px;
+  }
+
+}
+
+
+/* =========================================================
+   4. MOBILE
+   Keep only essential controls visible.
+   Prioritize touch spacing and clean drawer behavior.
+   Recommended range: below 768px
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+  .site-header {
+    top: 1rem;
+    width: calc(100% - 1rem);
+  }
+
+  .navbar-shell {
+    min-height: 42px;
+    padding: 0.3rem 0.8rem 0.3rem 5.8rem;
+    border: none; 
+    background:none;
+    box-shadow: none; 
+  }
+
+  .navbar-shell::before {
+    display: none;
+  }
+  .navbar-logo-link {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-drawer[hidden] {
+    display: none;
+  }
+
+  .mobile-drawer:not([hidden]) {
+    display: block;
+  }
+  
+  .navbar-logo {
+    width: 84px;
+  }
+
+  .navbar-toggle {
+    width: 36px;
+    height: 36px;
+    gap: 5px;
+    border-radius: 0.65rem;
+  }
+
+  .navbar-toggle span:nth-child(1),
+  .navbar-toggle span:nth-child(3) {
+    width: 18px;
+    height: 2px;
+  }
+
+  .navbar-toggle span:nth-child(2) {
+    width: 13px;
+    height: 2px;
+  }
+
+  .mobile-nav-links {
+    padding: 1rem;
+    padding-top: 3.5rem;
+  }
+
+  .mobile-nav-links a {
+    padding: 0.9rem 0.9rem;
+    font-size: 0.92rem;
+  }
+
+  .mobile-logo {
+    width: 96px;
+  }
+}

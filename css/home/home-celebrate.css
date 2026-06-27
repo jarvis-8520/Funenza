@@ -1,0 +1,493 @@
+/* =========================================================
+   HOME-CELEBRATE.CSS
+   "Celebrate With Funenza" section for home.html
+
+   Includes:
+   - Section layout (Grid)
+   - Feature card (Left)
+   - Inquiry cards (Right list)
+   - Dynamic form panels (Modal popup)
+   - Interactive states
+   - Responsive rules
+   ========================================================= */
+
+.home-celebrate {
+  position: relative;
+  padding: 2rem 0 0; /* Top 2rem, sides 0, bottom 0 */
+  overflow: hidden;
+}
+
+.celebrate-shell {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 0 auto;
+  width: min(100% - 2rem, 1280px);
+}
+
+/* =========================================================
+   1. SECTION HEADER
+   ========================================================= */
+
+.home-celebrate .section-header {
+  max-width: 800px;
+  margin-bottom: 0;
+}
+
+.celebrate-title {
+  margin: 0;
+  font-family: "Luckiest Guy", cursive;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+  color: #ff2d2d;
+  -webkit-text-stroke: 2px #ffd93d;
+  text-shadow:
+    0 3px 0 #1f49ff,
+    0 6px 0 rgba(0, 0, 0, 0.22);
+}
+
+.celebrate-title span {
+  color: #ffd93d;
+  -webkit-text-stroke: 2px #ff2d2d;
+}
+
+.home-highlights .section-desc {
+  margin: 1rem 0 0;
+  
+  max-width: 42rem;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.84);
+  text-wrap: pretty;
+}
+
+/* =========================================================
+   2. MAIN LAYOUT (Feature + List)
+   ========================================================= */
+
+.celebrate-main {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(380px, 1.02fr);
+  gap: 1.6rem;
+  align-items: center; /* SHIFTED LIST DOWNWARD FOR CENTER VIEW */
+}
+
+#celebrate-feature-card,
+#celebrate-inquiry-list {
+  min-width: 0;
+}
+
+
+/* =========================================================
+   3. FEATURE CARD (Left)
+   ========================================================= */
+.celebrate-feature-card {
+  position: relative;
+  min-height: 500px; /* INCREASED HEIGHT */
+  padding: 2.5rem 2rem;
+  border-radius: 1.35rem;
+  background: #111;
+  border: 4px solid #f0302d; /* INCREASED BORDER THICKNESS */
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  isolation: isolate; /* Keeps children on top of ::before */
+}
+
+.celebrate-feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%), 
+              url("../../images/celebrate.webp") center/cover no-repeat;
+  opacity: 1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+
+.celebrate-feature-eyebrow {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 0.8rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #00e5ff; /* Cyan eyebrow for better visibility */
+}
+
+.celebrate-feature-title {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: "Baloo 2", "Arial Black", sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: #ffffff; /* White title for image overlay */
+  text-transform: uppercase;
+}
+
+.celebrate-feature-desc {
+  position: relative;
+  z-index: 2;
+  margin: 1rem 0 0;
+  max-width: 32ch;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9); /* Bright desc for image overlay */
+}
+
+
+/* =========================================================
+   4. INQUIRY LIST (Right)
+   ========================================================= */
+
+#celebrate-inquiry-list {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.celebrate-inquiry-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 76px;
+  padding: 1.15rem 1.2rem;
+  border: 0;
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, #11154d 0%, #0b1040 100%);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  isolation: isolate;
+}
+
+.celebrate-inquiry-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff3b30 0%, #ffcc1b 48%, #1e46ff 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.celebrate-inquiry-card.is-active {
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.celebrate-inquiry-card__icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border-radius: 0;
+  font-size: 1.9rem;
+}
+
+.celebrate-inquiry-card__content {
+  min-width: 0;
+}
+
+.celebrate-inquiry-card__title {
+  margin: 0;
+  font-family: "Baloo 2", "Outfit", sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.celebrate-inquiry-card__subtitle {
+  margin: 0.2rem 0 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.celebrate-inquiry-card__button {
+  position: relative;
+  min-width: 96px;
+  height: 40px;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  background: transparent;
+  color: #ffffff;
+  border: 0;
+  border-radius: 999px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.celebrate-inquiry-card__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2.5px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff3b30 0%, #ffcc1b 48%, #1e46ff 100%);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.celebrate-inquiry-card__button span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   5. FORM PANELS (Modal popup)
+   ========================================================= */
+
+#celebrate-form-mount {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  margin: 0;
+  padding: 1.25rem;
+  background: rgba(4, 8, 28, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#celebrate-form-mount.is-open {
+  display: grid;
+  place-items: center;
+}
+
+.celebrate-form-panel {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(88vh, 860px);
+  overflow: auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: #ffffff;
+  color: #111111;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.32);
+}
+
+.celebrate-form-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: #f1f3fa;
+  color: #111111;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.celebrate-form-panel__header {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.celebrate-form-panel__header h3 {
+  margin: 0;
+  font-family: "Baloo 2", "Outfit", sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #111111;
+}
+
+.celebrate-form-panel__header p {
+  margin: 0.45rem 0 0;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #555555;
+}
+
+.celebrate-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.celebrate-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 0;
+}
+
+.celebrate-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.celebrate-form label span {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2b2b2b;
+}
+
+.celebrate-form input,
+.celebrate-form textarea,
+.celebrate-form select {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1.5px solid #d9dce8;
+  border-radius: 0.9rem;
+  background: #f8f9fd;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.98rem;
+  color: #111111;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.celebrate-form input:focus,
+.celebrate-form textarea:focus,
+.celebrate-form select:focus {
+  outline: none;
+  border-color: #1f49ff;
+  box-shadow: 0 0 0 3px rgba(31, 73, 255, 0.12);
+}
+
+.celebrate-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.celebrate-form__full {
+  grid-column: 1 / -1;
+}
+
+.celebrate-form__submit {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 1rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff3b30 0%, #1f49ff 100%);
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.celebrate-form__submit:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(90deg, #ff3b30 0%, #1f49ff 100%);
+}
+
+.celebrate-form__submit:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* =========================================================
+   6. RESPONSIVE RULES
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+  .celebrate-main {
+    grid-template-columns: 1fr;
+  }
+
+  .celebrate-feature-card {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .celebrate-main {
+    gap: 1rem;
+  }
+
+  .celebrate-feature-card {
+    min-height: 300px;
+    padding: 1.5rem 1.2rem;
+    border-radius: 1rem;
+  }
+
+  .celebrate-feature-title {
+    font-size: 2.1rem;
+  }
+
+  .celebrate-inquiry-card {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .celebrate-inquiry-card__icon {
+    display: none;
+  }
+
+  .celebrate-inquiry-card__title {
+    font-size: 1.45rem;
+  }
+
+  .celebrate-inquiry-card__button {
+    width: 100%;
+  }
+
+  #celebrate-form-mount {
+    padding: 0.9rem;
+  }
+
+  .celebrate-form-panel {
+    padding: 1.2rem;
+    border-radius: 1.1rem;
+  }
+
+  .celebrate-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .celebrate-form-panel__header h3 {
+    font-size: 1.55rem;
+  }
+}

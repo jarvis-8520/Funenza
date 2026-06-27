@@ -1,0 +1,196 @@
+/* =========================================================
+   HOME HERO
+   Full-screen slider for home.html
+
+   Includes:
+   - Hero wrapper
+   - Slide track
+   - Slides
+   - Overlay
+   - Content
+   - Arrow controls
+   - Dot navigation
+   - Hero-specific responsive rules
+   ========================================================= */
+
+/* =========================================================
+   1. HERO WRAPPER
+   Main full-screen hero section
+   ========================================================= */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 480px;
+  overflow: hidden;
+  background: #000;
+}
+
+
+/* =========================================================
+   2. SLIDE TRACK
+   JS injects all hero slides into this layer
+   ========================================================= */
+
+.home-hero-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   3. SLIDES
+   Each slide is stacked on top of each other
+   Only the active slide is visible
+   ========================================================= */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none; /* Prevents users from accidentally highlighting or dragging the image */
+  transition: opacity 0.9s ease;
+}
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   4. SLIDE MEDIA
+   Supports both image and video backgrounds
+   ========================================================= */
+
+.hero-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  backface-visibility: hidden; /* Forces hardware acceleration for stutter-free cross-fading */
+  transform: translateZ(0);     /* Keeps rendering smooth on iOS safari mobile */
+}
+.hero-slide video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   7. HERO ARROWS
+   Invisible, full-height touch targets
+   ========================================================= */
+
+.hero-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  
+  /* Reset everything to ensure no visual shadow or highlight */
+  background: transparent !important;
+  color: transparent !important;
+  border: none !important;
+  box-shadow: none !important; /* This is likely what is causing the shadow */
+  outline: none !important;
+  
+  /* Reset spacing and appearance */
+  margin: 0;
+  padding: 0;
+  
+  /* Hit area */
+  width: 35%; 
+  min-width: 80px; 
+  cursor: pointer;
+  
+  /* Remove any animation transitions */
+  transition: none !important;
+}
+
+/* Ensure no hover/active states trigger visual styles */
+.hero-arrow:hover, 
+.hero-arrow:active, 
+.hero-arrow:focus {
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.hero-arrow--prev {
+  left: 0;
+}
+
+.hero-arrow--next {
+  right: 0;
+}
+
+/* Ensure no visual hover feedback */
+.hero-arrow:hover {
+  background: transparent;
+  color: transparent;
+  
+}
+
+/* =========================================================
+   8. HERO DOTS
+   Slide indicators placed at the bottom center
+   ========================================================= */
+
+.hero-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(-50%);
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.25s ease, width 0.25s ease;
+}
+
+.hero-dot.is-active {
+  width: 22px;
+  background: #fff;
+}
+
+
+/* =========================================================
+   9. HERO RESPONSIVE
+   Keep hero usable across tablet and mobile
+   ========================================================= */
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .home-hero {
+    min-height: 420px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .home-hero {
+    min-height: 380px;
+  }
+
+  .hero-arrow {
+    display: none;
+  }
+}

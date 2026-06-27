@@ -1,0 +1,24 @@
+/* =========================================================
+   HOME.CSS
+   Page-level import file for home.html
+
+   Purpose:
+   - Keep home styles modular
+   - Load section files in page order
+   - Shared global styles stay in main.css
+
+   Order:
+   1. Hero
+   2. Choose Your Zone
+   3. Why Funenza
+   4. Funenza Highlights
+   5. Celebrate With Funenza
+   6. Shared Home Animations
+   7. Debug Helpers
+   ========================================================= */
+
+@import url("./home-zones.css");
+@import url("./home-why.css");
+@import url("./home-highlights.css");
+@import url("./home-celebrate.css");
+@import url("./pacman.css");
