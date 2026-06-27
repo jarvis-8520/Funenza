@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funenza | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Outfit:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/home/home-hero.css" />
+  <link rel="stylesheet" href="./css/home/home-zones.css" />
+  <link rel="stylesheet" href="./css/home/home-why.css" />
+  <link rel="stylesheet" href="./css/home/home-highlights.css" />
+  <link rel="stylesheet" href="./css/home/home-celebrate.css" />
+  <link rel="stylesheet" href="./css/pacman.css" />
+</head>
+<body class="">
+  
+  <div id="site-navbar"></div>
+  <main id="main-content">
+
+  <!-- =====================
+       SECTION 1: HERO
+       Slider: image / video
+       JS renders from home-hero.json
+  ===================== -->
+  <section class="home-hero" id="home-hero">
+    <div class="home-hero-track" id="hero-track">
+      <div class="hero-slide is-active" data-index="0">
+        <picture>
+          <source media="(max-width: 767px)" srcset="./images/hero/10.webp" />
+          
+          <img 
+            src="./images/hero/15.webp" 
+            alt="Welcome to Funenza Game Zone" 
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </div>
+    <button class="hero-arrow hero-arrow--prev" id="hero-prev" aria-label="Previous slide"></button>
+    <button class="hero-arrow hero-arrow--next" id="hero-next" aria-label="Next slide"></button>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <!-- =====================
+       SECTION 2: CHOOSE YOUR ZONE
+       10 zone cards
+       2 rows x 5 columns
+  ===================== -->
+<section class="home-zones" id="home-zones">
+  <div class="container">
+    <div class="section-header scroll-reveal">
+      <h2 class="section-title scroll-reveal">Choose Your <span>Zone</span></h2>
+      <p class="section-desc scroll-reveal">Explore thrilling games, rides &amp; experiences for every age.</p>
+    </div>
+    <div class="zones-grid" id="zones-grid">
+      
+      <article class="zone-card" data-slug="arcade">
+        <div class="zone-card-media">
+          <img src="./images/zones/arcade.webp" alt="Arcade" loading="lazy" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Arcade</h3>
+          <p class="zone-card-subtitle">Enter Arcade World</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="bumper-car">
+        <div class="zone-card-media">
+          <img src="./images/zones/bumper-car.webp" alt="Bumper Car" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Bumper Car</h3>
+          <p class="zone-card-subtitle">Ride Smash Repeat</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="bowling">
+        <div class="zone-card-media">
+          <img src="./images/zones/bowling.webp" alt="Bowling" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Bowling</h3>
+          <p class="zone-card-subtitle">Roll Strike Repeat</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="trampoline">
+        <div class="zone-card-media">
+          <img src="./images/zones/trampoline.webp" alt="Trampoline" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Trampoline</h3>
+          <p class="zone-card-subtitle">Jump Play Repeat</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="cricket-simulator">
+        <div class="zone-card-media">
+          <img src="./images/zones/cricket-simulator.webp" alt="Cricket Simulator" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Cricket Simulator</h3>
+          <p class="zone-card-subtitle">Step Into Stadium</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="vr">
+        <div class="zone-card-media">
+          <img src="./images/zones/vr.webp" alt="VR" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">VR</h3>
+          <p class="zone-card-subtitle">Reality Reimagined Now</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="adventure">
+        <div class="zone-card-media">
+          <img src="./images/zones/adventure.webp" alt="Adventure" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Adventure</h3>
+          <p class="zone-card-subtitle">Thrill Beyond Limits</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="mini-bowling">
+        <div class="zone-card-media">
+          <img src="./images/zones/mini-bowling.webp" alt="Mini Bowling" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Mini Bowling</h3>
+          <p class="zone-card-subtitle">Pocket Size Strikes</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="soft-play">
+        <div class="zone-card-media">
+          <img src="./images/zones/soft-play.webp" alt="SoftPlay" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">SoftPlay</h3>
+          <p class="zone-card-subtitle">Little Joy World</p>
+        </div>
+      </article>
+
+      <article class="zone-card" data-slug="cafe-retro">
+        <div class="zone-card-media">
+          <img src="./images/zones/cafe-retro.webp" alt="Cafe & Retro" />
+        </div>
+        <div class="zone-card-body">
+          <h3 class="zone-card-title">Cafe & Retro</h3>
+          <p class="zone-card-subtitle">Fuel Your Fun</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+  <!-- =====================
+       SECTION 3: WHY FUNENZA
+       Top row:
+       - Left: section text
+       - Right: Funenza logo image
+       Bottom:
+       - 8 text feature cards
+     ===================== -->
+  <section class="home-why" id="home-why">
+    <div class="container">
+
+      <!-- Section header: text block + logo -->
+      <div class="section-header">
+        
+        <!-- Left: small kicker + main heading -->
+      <div class="why-header-text">
+        <p class="section-kicker">
+          <span class="text-style-red">Why</span>
+          <span class="text-style-yellow">Choose</span>
+          <span class="text-style-blue">Us</span>
+        </p>
+
+        <h2 class="section-title">
+          <span class="text-style-red">Why</span>
+          <span class="text-style-yellow">Funenza</span>
+          <span class="text-style-blue">?</span>
+        </h2>
+      </div>
+
+        <!-- Right: section logo image -->
+        <div class="why-header-logo">
+          <img src="./images/logo.png" alt="Funenza logo" />
+        </div>
+      </div>
+
+      <!-- Feature card grid: 2 rows x 4 columns -->
+      <div class="why-grid">
+
+        <!-- Card 1 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Your Escape Spot</h3>
+          <p class="why-card-text">Step out of routine and into pure enjoyment.</p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Safe Environment</h3>
+          <p class="why-card-text">Trained staff &amp; safety standards at every zone.</p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Social-Ready Environment</h3>
+          <p class="why-card-text">Designed to look as good as it feels — perfect for reels &amp; memories.</p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Always Something New</h3>
+          <p class="why-card-text">Fresh experiences that keep every visit exciting.</p>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Unique Multi-Zone Concept</h3>
+          <p class="why-card-text">Arcade + Adventure + Sports + Chill — all in one place.</p>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Family Friendly</h3>
+          <p class="why-card-text">Designed for every age, from toddlers to adults.</p>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Party Ready Venue</h3>
+          <p class="why-card-text">Complete packages for birthdays and celebrations.</p>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="why-card">
+          <h3 class="why-card-title">Your Go-To Hangout Spot</h3>
+          <p class="why-card-text">The ultimate place to play, relax, and create memories.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+  <!-- =====================
+       SECTION 4: FUNENZA HIGHLIGHTS
+       11 photo blocks
+       Masonry / Bento grid
+  ===================== -->
+   <section class="home-highlights" id="home-highlights">
+    <div class="container">
+
+      <!-- Section heading -->
+      <div class="section-header">
+        <h2 class="section-title">  
+          FUNENZA <span>HIGHLIGHTS</span>
+        </h2>
+        <p class="section-desc">
+          Smiles, thrills, and memories. See what's waiting for you at Funenza.
+        </p>
+      </div>
+      <div class="highlights-grid" id="highlights-grid">
+        <!-- 11 photo blocks go here -->
+      </div>
+      </div>
+      </section>
+
+    <!-- =====================
+    SECTION 5: CELEBRATE WITH FUNENZA
+    HTML keeps only heading + desc
+    Cards and forms will be injected by JS
+    ===================== -->
+    <section class="home-celebrate" id="home-celebrate">
+    <div class="container">
+      <div class="celebrate-shell">
+        <div class="celebrate-intro">
+          <div class="section-header">
+            <h2 class="section-title celebrate-title">
+              CELEBRATE WITH <span>FUNENZA</span>
+            </h2>
+            <p class="section-desc">
+              From intimate birthday celebrations to large-scale corporate gatherings — we have the perfect package for you.
+            </p>
+          </div>
+        </div>
+
+        <div class="celebrate-main">
+          <div id="celebrate-feature-card"></div>
+          <div id="celebrate-inquiry-list"></div>
+        </div>
+
+        <div id="celebrate-form-mount"></div>
+      </div>
+    </div>
+    </section>
+
+    <div id="pacman-layer">
+      <canvas id="pacman-canvas"></canvas>
+      </div>
+      </main>
+      <div id="site-footer"></div>
+      <div id="site-popup"></div>
+      <script src="./js/navbar.js" type="module"></script>
+      <script src="./js/main.js"></script>
+      <script src="./js/popup.js" defer></script>
+      <script src="./js/home/home.js" type="module"></script>
+    </body>
+</html>

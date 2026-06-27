@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funenza | FUN MOMENTS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Outfit:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/footer.css" />
+  <link rel="stylesheet" href="./css/fun-moments/fun.css" />
+</head>
+<body class="">
+  
+  <div id="site-navbar"></div>
+  <main id="main-content">
+
+  <!-- =====================
+       SECTION 1: HERO
+       Slider: image / video
+       JS renders from fun-hero.json
+  ===================== -->
+  <section class="fun-hero" id="fun-hero">
+    <div class="fun-hero-track" id="hero-track"></div>
+    <div class="fun-hero-overlay">
+      <div class="container">
+        <div class="fun-hero-content" id="hero-content">
+          <!-- JS injects title, subtitle, CTA here -->
+        </div>
+      </div>
+    </div>
+    <button class="hero-arrow hero-arrow--prev" id="hero-prev" aria-label="Previous slide">&#8249;</button>
+    <button class="hero-arrow hero-arrow--next" id="hero-next" aria-label="Next slide">&#8250;</button>
+    <div class="hero-dots" id="hero-dots"></div>
+  </section>
+
+  <!-- =====================
+       SECTION 2: FUNENZA HIGHLIGHTS
+       22 photo blocks
+       Masonry / Bento grid
+  ===================== -->
+   <section class="fun-highlights" id="fun-highlights">
+    <div class="container">
+
+      <!-- Section heading -->
+      <div class="section-header">
+        <h2 class="section-title">  
+          FUNENZA <span>HIGHLIGHTS</span>
+        </h2>
+        <p class="section-desc">
+          Smiles, thrills, and memories. See what's waiting for you at Funenza.
+        </p>
+      </div>
+      <div class="highlights-grid" id="highlights-grid">
+        <!-- 11 photo blocks go here -->
+      </div>
+      </div>
+      </section>
+
+  <!-- =====================
+       SECTION 3: FUNENZA reviews
+       11 photo blocks
+       Masonry / Bento grid
+  ===================== -->
+   <section class="fun-highlights" id="fun-highlights">
+    <div class="container">
+
+      <!-- Section heading -->
+      <div class="section-header">
+        <h2 class="section-title">  
+          real smiles,real views
+        </h2>
+        <p class="section-desc">
+          hear it from those who've experienced the excitement.
+        </p>
+      </div>
+      <div class="highlights-grid" id="highlights-grid">
+        <!-- 11 photo blocks go here -->
+      </div>
+      </div>
+      </section>
+
+    <div id="pacman-layer">
+      <canvas id="pacman-canvas"></canvas>
+      </div>
+      </main>
+      <div id="site-footer"></div>
+      <div id="site-popup"></div>
+      <script src="./js/navbar.js" type="module"></script>
+      <script src="./js/main.js"></script>
+      <script src="./js/popup.js" defer></script>
+      <script src="./js/fun/fun.js" type="module"></script>
+    </body>
+</html>
